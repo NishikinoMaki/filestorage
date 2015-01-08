@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	<appender name="globleAppender"
+		class="org.apache.log4j.AsyncAppender">
+		<appender-ref ref="stdout" />
+	</appender>
+
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{HH:mm:ss,SSS\} %p] %c - %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="groupon.commons.filters">
+		<level value="info" />
+	</logger>
+	<logger name="groupon.commons.listeners">
+		<level value="info" />
+	</logger>
+	<logger name="com.danga.MemCached">
+		<level value="warn" />
+	</logger>
+	<logger name="org.springframework">
+		<level value="info" />
+	</logger>
+	<logger name="org.apache">
+		<level value="info" />
+	</logger>
+	<logger name="org.apache.struts2">
+		<level value="info" />
+	</logger>
+	<logger name="com.opensymphony.xwork2">
+		<level value="info" />
+	</logger>
+	<logger name="freemarker">
+		<level value="info" />
+	</logger>
+	<logger name="org.logicalcobwebs">
+		<level value="debug" />
+	</logger>
+	<logger name="com.opensymphony.xwork2.ognl.OgnlValueStack">
+		<level value="error" />
+	</logger>
+	<logger name="org.displaytag">
+		<level value="info" />
+	</logger>
+	<logger name="com.googlecode.jsonplugin">
+		<level value="info" />
+	</logger>
+
+	<root>
+		<level value="debug" />
+		<appender-ref ref="globleAppender" />
+	</root>
+</log4j:configuration>
