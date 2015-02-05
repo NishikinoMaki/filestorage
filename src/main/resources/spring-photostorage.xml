@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+    	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<bean id="photoStorageServerConfig" class="yuanlai.photostorage.service.PhotoStorageServerConfig">
+		<property name="properties" value="WEB-INF/photo-storage.properties" />
+	</bean>
+
+	<bean id="userPhotoStorage" class="yuanlai.photostorage.service.UserPhotoStorageImpl">
+		<property name="config" ref="photoStorageServerConfig" />
+	</bean>
+	<bean id="appUserPhotoStorage" class="yuanlai.photostorage.service.AppUserPhotoStorageImpl">
+		<property name="config" ref="photoStorageServerConfig" />
+	</bean>
+	<bean id="modulePhotoStorage" class="yuanlai.photostorage.service.ModulePhotoStorageImpl">
+		<property name="config" ref="photoStorageServerConfig" />
+	</bean>
+	<bean id="tempPhotoStorage" class="yuanlai.photostorage.service.TempPhotoStorageImpl">
+		<property name="config" ref="photoStorageServerConfig" />
+	</bean>
+</beans>
