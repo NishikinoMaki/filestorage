@@ -27,7 +27,7 @@ public class PhotoStorageServerConfig implements InitializingBean, ServletContex
 	private final static String USER_PHOTO_SIZE_PREFIX = "photostorage.userphoto.size.";
 	private final static String MODULE_PHOTO_SIZE_PREFIX = "photostorage.modulephoto.";
 
-	private final static String RESOURCE_FOLDER = "/WEB-INF/resources/";
+	private final static String RESOURCE_FOLDER = "/WEB-INF/default-photo/";
 
 	private Resource properties;
 
